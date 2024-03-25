@@ -13,4 +13,6 @@ o
 java:S6837'"3Remove this superfluous "@ResponseBody" annotation.(ά¥ΌJ$b35d1694-1aba-4e99-a92c-8f345ad7166a
 o
 java:S6837."3Remove this superfluous "@ResponseBody" annotation.(ά¥ΌJ$adc69a50-e27e-47c5-bd62-8c649c2dd633
+\
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(φΨΗ18ϊχήªη1
 w	java:S1253"<This block of commented-out lines of code should be removed.(°χ±λJ$4fccc802-5a7c-4d7d-9cb6-3e9476d9e1e6

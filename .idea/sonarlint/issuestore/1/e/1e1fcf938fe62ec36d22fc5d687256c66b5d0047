@@ -1,5 +1,7 @@
 
 ¨
-java:S1488("gImmediately return this expression instead of assigning it to the temporary variable "secteurActivite".(ÿµÑ©ýÿÿÿÿJ$a510cf57-263d-4667-8a4b-f4e649d6273e
+java:S1488("gImmediately return this expression instead of assigning it to the temporary variable "secteurActivite".(ÿµÑ©ýÿÿÿÿJ$8920b86c-c96d-4749-a5ca-81bfd3f3914e
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$cc8d2427-0bab-4446-9895-cd8e64f67ab1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$d031460c-28b8-4637-bed1-8a503b8442f8
+¤
+java:S4144!"bUpdate this method so that its implementation is not identical to "addSecteurActivite" on line 21.(Ú”Ú8¸íÔªç1J$774d308c-a2d2-4d7b-bfc1-d5f7b43d53d1

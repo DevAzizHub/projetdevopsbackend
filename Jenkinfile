@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
-    
+    tools { 
+	maven 'M2_HOME'
+        jdk 'JAVA_HOME' 
+}
     stages {
         stage('Checkout') {
             steps {
@@ -27,7 +30,7 @@ pipeline {
         stage('Maven Install') {
             steps {
                 // Étape d'installation avec Maven
-                sh 'mvn install test'
+                sh 'mvn install'
             }
         }
 
@@ -46,7 +49,12 @@ pipeline {
                     }
                 }
        
-                
+       stage('JUnit/Mockito'){ 
+		steps {
+		  sh 'mvn test'
+		}
+	
+	}         
             
         
 

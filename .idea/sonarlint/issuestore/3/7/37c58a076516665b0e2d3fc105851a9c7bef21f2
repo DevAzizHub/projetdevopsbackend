@@ -1,18 +1,22 @@
 
 Ÿ
-java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "list".(ˆşé8¼ÛÉ¨ç1J$dca6799d-9096-4e16-b7a3-f7304f7f628e
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "list".(ˆşé8¼ÛÉ¨ç1J$0eb54abe-36a5-4aa8-a5be-6f3b0c17bafe
 °
-java:S1488&"hImmediately return this expression instead of assigning it to the temporary variable "categorieProduit".(óÒı†ùÿÿÿÿ8£ÜÉ¨ç1J$9374fe1c-a1c7-4219-9bcd-6a8fb6dfc049
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ß±î¨ç1
-P
-java:S6837"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1
-P
-java:S6837"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1
-P
-java:S6837$"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1
-P
-java:S6837,"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1
-P
-java:S68373"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1
-ƒ	java:S125*"<This block of commented-out lines of code should be removed.(Õ•òüÿÿÿÿ8ÂÜÉ¨ç1J$f7f7df9d-819b-451a-9c2b-fdd910a89182
+java:S1488&"hImmediately return this expression instead of assigning it to the temporary variable "categorieProduit".(óÒı†ùÿÿÿÿ8£ÜÉ¨ç1J$fbb9e159-7196-4db0-a701-854ad48ecd82
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ß±î¨ç1J$139b4d92-d1a6-4af7-be70-ec1e3f295464
+v
+java:S6837"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1J$6e2f06ab-2fa0-4415-b15d-b9ced175afc8
+v
+java:S6837"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1J$bb64deef-3c94-4544-a19a-23e7b5925712
+v
+java:S6837$"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1J$ac1a9d2b-fd03-456e-85a9-aad02acb50eb
+v
+java:S6837,"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1J$14c3912d-23c7-48a4-8de0-82de97b1eeed
+v
+java:S68373"3Remove this superfluous "@ResponseBody" annotation.(Ü¥¼8²î¨ç1J$36c68093-7d8a-49e9-80b5-eca7e16bc5d1
+ƒ
+java:S4684%"@Replace this persistent entity with a simple POJO or DTO object.(¹×ø¦8Š„Õªç1J$36739120-54e6-4465-a213-946f6682464f
+ƒ	java:S125*"<This block of commented-out lines of code should be removed.(Õ•òüÿÿÿÿ8ÂÜÉ¨ç1J$74ffe6dc-15fb-4724-86c6-ee48dfab9cb3
+ˆ
+java:S46844"@Replace this persistent entity with a simple POJO or DTO object.(¤Å¶ôÿÿÿÿÿ8ë„Õªç1J$e7e1860b-d538-4843-a2df-2fe01153bae0

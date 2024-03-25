@@ -3,3 +3,5 @@
 java:S1488*"hImmediately return this expression instead of assigning it to the temporary variable "categorieProduit".(ÞŸÐÏJ$71eda913-f34a-415e-813a-5bf2cfee4628
 ~
 java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$f80d13d8-854a-4e17-badc-1818ffc2efcc
+€
+java:S4144#"cUpdate this method so that its implementation is not identical to "addCategorieProduit" on line 23.(ð¹Üÿ8ÒîÞªç1

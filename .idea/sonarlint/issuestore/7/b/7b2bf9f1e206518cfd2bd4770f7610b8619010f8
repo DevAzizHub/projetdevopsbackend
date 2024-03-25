@@ -1,18 +1,26 @@
 
 ¤
-java:S1488o"cImmediately return this expression instead of assigning it to the temporary variable "pourcentage".(œòô”üÿÿÿÿJ$bf166398-0d89-4c6a-b3b2-c98c25c53573
+java:S1488q"cImmediately return this expression instead of assigning it to the temporary variable "pourcentage".(œòô”üÿÿÿÿJ$17a46694-3236-4ef6-a46b-9dd5b2082647
+Œ
+java:S2259b"IA "NullPointerException" could be thrown; "fournisseur" is nullable here.(™ÙÖµ8‚ßªç1J$64f0ccad-86ae-465e-bf7b-24bb77aaa170
+Š
+java:S2259i"GA "NullPointerException" could be thrown; "operateur" is nullable here.(¾„Ÿè8„‚ßªç1J$7deb98b0-8e4a-46fc-9303-0bd6c42bbf2f
+z
+java:S36557"7Call "Optional#isPresent()" before accessing the value.(Š„™³8‚ßªç1J$85916bda-b3eb-4d15-8c0f-d5feb22dfe52
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$e24e3c8e-7056-4573-9c0f-e9972fd2e9d2
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$3170d4b7-bda5-49b2-9763-981c7b45a314
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$1a9eca30-a29f-47d3-9ad8-aa5464a260a5
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$b4da8af7-edf6-420a-b815-81a2ddbfa895
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$d1f14e60-8340-43f5-96fd-1d508dad4035
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$965d6c59-8c79-49eb-98db-d6272427376c
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$357c4fe8-3c2b-4f4a-8145-4937fd6fcc53
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$35be3a32-5c56-4967-abf2-edb75a420057
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$97ffed5e-e80e-4205-88fa-5801db3c8337
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$d8acdc1c-f4dd-43aa-b6f5-be399c12c9ff
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$4d110d4e-7396-4cc6-ac14-2a49ad140a04
-w	java:S125M"<This block of commented-out lines of code should be removed.(°¦¥˜J$b37b5496-397b-47e7-aa2d-eddae2a95a75
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$d1cc75e9-4510-4e00-9a36-94dd65cc4ce0
+j
+java:S1905""'Remove this unnecessary cast to "List".(Õà …8Á‚ßªç1J$2acd2e23-6b14-4039-a3d1-e4fbeb4c7d60
+X	java:S125M"<This block of commented-out lines of code should be removed.(°¦¥˜8÷áÂ±ç1
 r
-java:S11442"6Remove this unused private "addDetailsFacture" method.(Á¥²ùJ$d4fc10ed-6ec5-48b2-91aa-cfa0acb691e5
+java:S11442"6Remove this unused private "addDetailsFacture" method.(Á¥²ùJ$d523039e-d257-4696-be7c-564de7d2ad0b

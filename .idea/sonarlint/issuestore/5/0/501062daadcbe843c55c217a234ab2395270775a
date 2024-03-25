@@ -1,5 +1,7 @@
 
 
-java:S1488("aImmediately return this expression instead of assigning it to the temporary variable "operateur".(¶ŠùµJ$f0bbdf26-77fb-42f6-94ca-9d6648b13080
+java:S1488("aImmediately return this expression instead of assigning it to the temporary variable "operateur".(¶ŠùµJ$962d603a-0c4e-47a1-a5f5-35dac59cde81
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$9c3ab0e6-7362-4d57-b411-11e60d8f193d
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$db0c86fa-fa6e-4d39-863a-ef9623c21130
+¤
+java:S4144!"\Update this method so that its implementation is not identical to "addOperateur" on line 21.(“¥¹¤úÿÿÿÿ8àÑÕªç1J$f100ed12-e7ac-43ae-bc7c-515ae71f236f

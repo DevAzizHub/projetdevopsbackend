@@ -1,7 +1,11 @@
 
+ˆ
+java:S2259@"EA "NullPointerException" could be thrown; "produit" is nullable here.(·åå8íÙÕªç1J$703c4310-bb45-4841-a21f-be0aace43161
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$833784ef-e88c-4281-980b-81a0df084751
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$ac714edf-6539-4d85-a2fb-94e4f55fe4cf
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$82c7ebb6-f9ba-4bca-8a30-1d676deef040
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$c93feb3b-e39a-4dd0-899a-904c4101ed1f
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$60d4083e-bfbc-4bd3-bd6c-dd489b4e251f
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$df04b639-22c9-4026-8ab9-15a0267905b2
+j
+java:S1905"'Remove this unnecessary cast to "List".(Ïï¥†8³ÚÕªç1J$1525ff2d-639e-4a3c-80a1-c338c610a773
