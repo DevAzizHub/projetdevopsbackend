@@ -1,0 +1,21 @@
+
+ó
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "list".(ÍÎ†lJ$edb138bb-3aab-4753-bf5f-6ba59c499702
+õ
+java:S1488*"_Immediately return this expression instead of assigning it to the temporary variable "facture".(óã√ÏJ$33889695-8a27-4fc5-bd98-14f7e0eea706
+Ö
+java:S6813"BRemove this field injection and use constructor injection instead.(ÍÊƒﬁ8˛”Õ®Á1J$8036c70f-8cec-409d-b780-bf6649e6ac8b
+v
+java:S6837"3Remove this superfluous "@ResponseBody" annotation.(‹•ºê8†‘Õ®Á1J$b5e5b81d-d4e7-4412-9f22-6c4bd2ede11a
+v
+java:S6837!"3Remove this superfluous "@ResponseBody" annotation.(‹•ºê8°‘Õ®Á1J$5189239c-0fad-4708-b078-3e72b5c1af4b
+v
+java:S6837("3Remove this superfluous "@ResponseBody" annotation.(‹•ºê8°‘Õ®Á1J$7ba276b5-5309-4b8c-8714-c10c2b622ed1
+v
+java:S68374"3Remove this superfluous "@ResponseBody" annotation.(‹•ºê8¢‘Õ®Á1J$6abcb98e-5c9e-45f7-84c6-384164a1ce8d
+v
+java:S6837;"3Remove this superfluous "@ResponseBody" annotation.(‹•ºê8¢‘Õ®Á1J$f2f48825-8df2-40a4-956d-048686f6f65a
+w	java:S125&"<This block of commented-out lines of code should be removed.(ùÇºÊJ$945bb8cf-b05d-426a-ae0c-fcc8bb02abcf
+|	java:S1252"<This block of commented-out lines of code should be removed.(˝˜ø≠˛ˇˇˇˇJ$6a4ec03b-f759-4b16-bcdb-b0bccc83042e
+w	java:S1259"<This block of commented-out lines of code should be removed.(ﬁµõ¢J$d56b3a3f-077f-45d8-bbe0-a2e23abd998a
+|	java:S125F"<This block of commented-out lines of code should be removed.(Ëöá¢¸ˇˇˇˇJ$62597193-0845-49ec-9f3b-229e38e528a5

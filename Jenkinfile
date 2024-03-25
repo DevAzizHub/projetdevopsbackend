@@ -1,0 +1,70 @@
+pipeline {
+    agent any
+
+    tools {
+        // Définition des outils Maven et JDK à utiliser
+        maven 'M2_HOME'
+        jdk 'JAVA_HOME'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Étape de checkout : récupération du code depuis Git
+                git 'https://github.com/DevAzizHub/projetdevopsbackend.git'
+            }
+        }
+
+        stage('Compilation avec Maven') {
+            steps {
+                // Étape de compilation avec Maven
+                sh 'mvn clean compile'
+            }
+        }
+
+        stage('Build package') {
+            steps {
+                // Étape de construction du package avec Maven
+                sh 'mvn package'
+            }
+        }
+
+        stage('Maven Install') {
+            steps {
+                // Étape d'installation avec Maven
+                sh 'mvn install'
+            }
+        }
+
+        stage('MVN TEST') {
+            steps {
+                // Étape de test avec Maven
+                sh 'mvn test'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+           
+              steps {
+				sh """ mvn sonar:sonar \
+				  -Dsonar.projectKey=devops \
+				  -Dsonar.host.url=http://10.0.2.15:9000 \
+				  -Dsonar.login=admin
+                  -Dsonar.password=root
+				"""
+			} 
+                
+            }
+        
+
+        stage('Affichage de la date système') {
+            steps {
+                // Étape pour afficher la date système
+                script {
+                    def date = sh(script: 'date', returnStdout: true).trim()
+                    println "Date système : ${date}"
+                }
+            }
+        }
+    }
+}
