@@ -1,12 +1,7 @@
 pipeline {
     agent any
 
-    tools {
-        // Définition des outils Maven et JDK à utiliser
-        mvn 'M2_HOME'
-        jdk 'JAVA_HOME'
-    }
-
+    
     stages {
         stage('Checkout') {
             steps {
