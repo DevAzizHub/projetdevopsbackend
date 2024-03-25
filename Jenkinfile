@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Définition des outils Maven et JDK à utiliser
-        maven 'M2_HOME'
+        mvn 'M2_HOME'
         jdk 'JAVA_HOME'
     }
 
