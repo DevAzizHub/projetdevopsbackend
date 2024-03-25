@@ -27,25 +27,27 @@ pipeline {
         stage('Maven Install') {
             steps {
                 // Étape d'installation avec Maven
-                sh 'mvn install'
+                sh 'mvn install test'
             }
         }
 
-        stage('MVN TEST') {
-            steps {
-                // Étape de test avec Maven
-                sh 'mvn test'
-            }
-        }
+        
 
         stage('SonarQube Analysis') {
            
               steps {
-				sh """ mvn sonar:sonar 
-				"""
-			} 
+
+
+                      withSonarQubeEnv('sonarqube') {
+                      
+                        sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=root"
+                        }
+
+                    }
+                }
+       
                 
-            }
+            
         
 
         stage('Affichage de la date système') {
