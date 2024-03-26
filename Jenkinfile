@@ -17,21 +17,12 @@ pipeline {
             }
         }
 
-        stage('Build package') {
-            steps {
-                // Étape de construction du package avec Maven
-                sh 'mvn package'
-            }
+        stage('JUnit/Mockito'){
+             steps { 
+                 sh 'mvn test'
+             }
+	
         }
-
-        stage('Maven Install') {
-            steps {
-                // Étape d'installation avec Maven
-                sh 'mvn install'
-            }
-        }
-
-        
 
         stage('SonarQube Analysis') {
            
@@ -46,12 +37,7 @@ pipeline {
                     }
                 }
        
-       stage('JUnit/Mockito'){ 
-		steps {
-		  sh 'mvn test'
-		}
-	
-	}         
+               
             
         
 
