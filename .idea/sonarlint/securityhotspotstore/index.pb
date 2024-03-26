@@ -103,11 +103,7 @@ c
 Jenkinfile,1/9/19c84cfebc6d2ee93c40014d268aa65f7e6b27c9
 Y
 )src/main/resources/application.properties,0/6/06f65155ec73600b9fc5c4dc2883d4bb84d8e284
-l
-<src/test/java/org/example/controllers/facturecontroller.java,4/e/4eb767e3561f3c2b82dd5195a45e6f3036ef099a
 f
 6src/test/java/org/example/controllers/facturerest.java,b/6/b63ede1ba35b597eeae72079cdc5f676ae037128
-h
-8src/test/java/org/example/services/servicecategorie.java,3/0/304301c3a2d60d47dd5879614706a2eff45dc722
 n
 >src/test/java/org/example/services/FactureServiceImplTest.java,8/5/854908d9aacc8dceb2074816d62a7afed4394948

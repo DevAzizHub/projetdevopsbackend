@@ -15,6 +15,7 @@ import org.example.entities.Facture;
 import org.example.entities.Operateur;
 import org.example.repositories.FactureRepository;
 import org.example.repositories.OperateurRepository;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;

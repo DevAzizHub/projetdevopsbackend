@@ -1,10 +1,10 @@
 
 ¤
 java:S1488q"cImmediately return this expression instead of assigning it to the temporary variable "pourcentage".(œòô”üÿÿÿÿJ$17a46694-3236-4ef6-a46b-9dd5b2082647
-Œ
-java:S2259b"IA "NullPointerException" could be thrown; "fournisseur" is nullable here.(™ÙÖµ8‚ßªç1J$64f0ccad-86ae-465e-bf7b-24bb77aaa170
 Š
 java:S2259i"GA "NullPointerException" could be thrown; "operateur" is nullable here.(¾„Ÿè8„‚ßªç1J$7deb98b0-8e4a-46fc-9303-0bd6c42bbf2f
+Œ
+java:S2259b"IA "NullPointerException" could be thrown; "fournisseur" is nullable here.(™ÙÖµ8‚ßªç1J$64f0ccad-86ae-465e-bf7b-24bb77aaa170
 z
 java:S36557"7Call "Optional#isPresent()" before accessing the value.(Š„™³8‚ßªç1J$85916bda-b3eb-4d15-8c0f-d5feb22dfe52
 ~
