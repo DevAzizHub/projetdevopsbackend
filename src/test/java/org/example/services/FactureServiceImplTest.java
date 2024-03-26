@@ -30,7 +30,7 @@ import static org.mockito.Mockito.mock;
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class FactureServiceImplTest {
+class FactureServiceImplTest {
 
     //@Autowired
     IFactureService factureService;
