@@ -48,7 +48,7 @@ pipeline {
            
                 steps {
 
-
+                script{
                        withSonarQubeEnv(credentialsId: 'sonar-api-key') {
                       
                           sh "mvn clean package sonar:sonar -Dsonar.login=admin -Dsonar.password=root"
@@ -56,14 +56,26 @@ pipeline {
 
                       }
                   }
+<<<<<<< HEAD
        
            stage("sonar_quality_check"){
+=======
+       }
+        stage("sonar_quality_check"){
+>>>>>>> 13f1f21a0f5207a5d6d08c84088e50e808ade3b4
             steps{
                 script{
                  waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
                }
               }
+<<<<<<< HEAD
 		}
+=======
+}
+          // stage("sonar_quality_check"){
+          //  steps{
+            //    script{
+>>>>>>> 13f1f21a0f5207a5d6d08c84088e50e808ade3b4
                //     withSonarQubeEnv(credentialsId: 'adafa76b-6205-41ed-9149-55f48920347e') {
                  //     sh "mvn sonar:sonar"
                    // }
