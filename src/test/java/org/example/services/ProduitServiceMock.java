@@ -29,7 +29,7 @@ import org.junit.runner.RunWith;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @ExtendWith(MockitoExtension.class)
-public class ProduitServiceImpMock {
+public class ProduitServiceMockTest {
 
 
   @InjectMocks
