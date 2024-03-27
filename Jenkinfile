@@ -57,6 +57,13 @@ pipeline {
                       }
                   }
        }
+        stage("sonar_quality_check"){
+            steps{
+                script{
+                 waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
+               }
+              }
+}
           // stage("sonar_quality_check"){
           //  steps{
             //    script{
