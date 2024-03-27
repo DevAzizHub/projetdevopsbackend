@@ -41,9 +41,9 @@ pipeline {
                 steps {
 
 
-                        withSonarQubeEnv('sonarqube') {
+                       withSonarQubeEnv(credentialsId: 'sonar-api-key') {
                       
-                          sh "mvn verify sonar:sonar -Dsonar.login=admin -Dsonar.password=root"
+                          sh "mvn clean package sonar:sonar -Dsonar.login=admin -Dsonar.password=root"
                           }
 
                       }
