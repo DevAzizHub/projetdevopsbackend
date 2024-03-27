@@ -30,49 +30,40 @@ pipeline {
                jacoco()
             }
         }
-        stage('JaCoCo coverage report') {
-            steps {
-                step([$class: 'JacocoPublisher',
-                      execPattern: '**/target/jacoco.exec',
-                      classPattern: '**/classes',
-                      sourcePattern: '**/src',
-                      exclusionPattern: '*/target/**/,**/*Test*,**/*_javassist/**'
-                ])
-            }
-        }
+        
       stage('MVN install') {
             steps {
               sh 'mvn package install'
             }
         }
-     //   stage('SonarQube Analysis') {
+        stage('SonarQube Analysis') {
            
-       //         steps {
+                steps {
 
 
-        //                withSonarQubeEnv('sonarqube') {
+                        withSonarQubeEnv('sonarqube') {
                       
-           //               sh "mvn verify sonar:sonar -Dsonar.login=admin -Dsonar.password=root"
-             //             }
+                          sh "mvn verify sonar:sonar -Dsonar.login=admin -Dsonar.password=root"
+                          }
 
-             //         }
-             //     }
-       
-           stage("sonar_quality_check"){
-            steps{
-                script{
-                    withSonarQubeEnv(credentialsId: 'adafa76b-6205-41ed-9149-55f48920347e') {
-                      sh "mvn sonar:sonar"
-                    }
-
-                     timeout(time: 1, unit: 'HOURS') {
-                      def qg = waitForQualityGate()
-                      if (qg.status != 'OK') {
-                           error "Pipeline aborted due to quality gate failure: ${qg.status}"
                       }
-                    }
-                }
-            }
+                  }
+       
+          // stage("sonar_quality_check"){
+          //  steps{
+            //    script{
+               //     withSonarQubeEnv(credentialsId: 'adafa76b-6205-41ed-9149-55f48920347e') {
+                 //     sh "mvn sonar:sonar"
+                   // }
+
+                //     timeout(time: 1, unit: 'HOURS') {
+                  //    def qg = waitForQualityGate()
+                    //  if (qg.status != 'OK') {
+                      //     error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                    //  }
+                  //  }
+              //  }
+           // }
           
         }    
             
