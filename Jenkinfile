@@ -62,7 +62,7 @@ pipeline {
             agent { docker 'maven:3-alpine' } 
             steps{
                 script{
-                    withSonarQubeEnv(credentialsId: 'jenkins_token') {
+                    withSonarQubeEnv('sonarqube') {
                       sh "mvn sonar:sonar"
                     }
 
