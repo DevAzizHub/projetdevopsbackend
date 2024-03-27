@@ -59,7 +59,6 @@ pipeline {
              //     }
        
            stage("sonar_quality_check"){
-            agent { docker 'maven:3-alpine' } 
             steps{
                 script{
                     withSonarQubeEnv('sonarqube') {
