@@ -26,7 +26,8 @@ pipeline {
            stage('Rapport JaCoCo') {
             steps {
                 sh 'mvn test'
-                sh 'mvn jacoco:report'
+               // sh 'mvn jacoco:report'
+               jacoco()
             }
         }
         stage('JaCoCo coverage report') {
