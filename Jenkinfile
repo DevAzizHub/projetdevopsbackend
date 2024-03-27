@@ -61,7 +61,7 @@ pipeline {
            stage("sonar_quality_check"){
             steps{
                 script{
-                    withSonarQubeEnv('sonarqube') {
+                    withSonarQubeEnv(credentialsId: 'adafa76b-6205-41ed-9149-55f48920347e') {
                       sh "mvn sonar:sonar"
                     }
 
