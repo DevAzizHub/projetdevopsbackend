@@ -55,23 +55,16 @@ pipeline {
                           }
 
                       }
-                  }
-<<<<<<< HEAD
-       
-           stage("sonar_quality_check"){
-=======
-       }
+          }        }
+
         stage("sonar_quality_check"){
->>>>>>> 13f1f21a0f5207a5d6d08c84088e50e808ade3b4
             steps{
                 script{
                  waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
                }
               }
-<<<<<<< HEAD
 		}
-=======
-}
+
           // stage("sonar_quality_check"){
           //  steps{
             //    script{
