@@ -79,7 +79,7 @@ pipeline {
 			credentialsId: 
 			'nexusauth', 
 			groupId: 'org.example',
-			nexusUrl: '10.0.2.15:8080',
+			nexusUrl: '10.0.2.15:8081',
 			nexusVersion: 'nexus3',
 			protocol: 'http',
 			repository: 'demo',
