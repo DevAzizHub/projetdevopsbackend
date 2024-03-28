@@ -64,11 +64,37 @@ pipeline {
                }
               }
 		}
+	stage('upload jar file to nexus'){
+		steps{
+			script{
+
+		nexusArtifactUploader artifacts: 
+		[
+		[
+			artifactId: 'projet',
+			classifier: '',
+			file: 'target/Uber.jar',
+			type: 'jar']
+			],
+			credentialsId: 
+			'nexusauth', 
+			groupId: 'org.example',
+			nexusUrl: '10.0.2.15:8080',
+			nexusVersion: 'nexus3',
+			protocol: 'http',
+			repository: 'demo',
+			version: '1.0-SNAPSHOT'
+
+			}
+
+		}
+
+
+	}
 
           // stage("sonar_quality_check"){
           //  steps{
             //    script{
->>>>>>> 13f1f21a0f5207a5d6d08c84088e50e808ade3b4
                //     withSonarQubeEnv(credentialsId: 'adafa76b-6205-41ed-9149-55f48920347e') {
                  //     sh "mvn sonar:sonar"
                    // }
@@ -84,41 +110,41 @@ pipeline {
           
         //}    
             
-         stage("Publish to Nexus Repository Manager") {
-            steps {
-                script {
-                    pom = readMavenPom file: "pom.xml";
-                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
-                    echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
-                    artifactPath = filesByGlob[0].path;
-                    artifactExists = fileExists artifactPath;
-                    if(artifactExists) {
-                        echo "* File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
-                        nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
-                            artifacts: [
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: artifactPath,
-                                type: pom.packaging],
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
-                                type: "pom"]
-                            ]
-                        );
-                    } else {
-                        error "* File: ${artifactPath}, could not be found";
-                    }
-                }
-            }
-        }
+ //        stage("Publish to Nexus Repository Manager") {
+//            steps {
+  //              script {
+     //               pom = readMavenPom file: "pom.xml";
+   //                 filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
+     //               echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
+    //                artifactPath = filesByGlob[0].path;
+    //                artifactExists = fileExists artifactPath;
+    //                if(artifactExists) {
+    //                    echo "* File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
+     //                   nexusArtifactUploader(
+     //                       nexusVersion: NEXUS_VERSION,
+      //                      protocol: NEXUS_PROTOCOL,
+      //                      nexusUrl: NEXUS_URL,
+      //                      groupId: pom.groupId,
+        //                    version: pom.version,
+        //                    repository: NEXUS_REPOSITORY,
+        //                    credentialsId: NEXUS_CREDENTIAL_ID,
+         //                   artifacts: [
+         //                       [artifactId: pom.artifactId,
+           //                     classifier: '',
+          //                      file: artifactPath,
+           //                     type: pom.packaging],
+            //                    [artifactId: pom.artifactId,
+            //                    classifier: '',
+            //                    file: "pom.xml",
+            //                    type: "pom"]
+             //               ]
+             //           );
+             //       } else {
+             //           error "* File: ${artifactPath}, could not be found";
+             //       }
+             //   }
+           // }
+     //   }
 
         stage('Affichage de la date système') {
             steps {
