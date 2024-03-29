@@ -109,6 +109,32 @@ pipeline {
 
 
 	}
+stage('Docker image build'){ 
+	steps {
+		script {
+			sh 'docker image build -t  image1:$BUILD_NUMBER .'
+              
+		}
+
+	}
+
+
+}
+
+       stage("Push to DockerHub") { 
+            steps { 
+                script {
+                    
+                    withCredentials([string(credentialsId: 'DockerId', variable: 'Docker')]) {
+                        sh 'docker login -u dockerfilehunter -p ${Docker}'
+                        sh 'docker image push dockerfilehunter/spring:$BUILD_NUMBER'
+                }
+            } 
+            }
+            
+        }
+
+dockerfilehunter
 /*  stage('Deploy to Nexus') {
             steps {
                 sh 'mvn deploy'
