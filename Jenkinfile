@@ -126,7 +126,7 @@ stage('Docker image build'){
                 script {
                     
                     withCredentials([string(credentialsId: 'DockerId', variable: 'Docker')]) {
-                        sh 'docker login -u dockerfilehunter -p ${Docker}'
+                        sh "docker login -u 'dockerfilehunter' -p ${Docker}"
                         sh 'docker image push dockerfilehunter/spring:$BUILD_NUMBER'
                 }
             } 
