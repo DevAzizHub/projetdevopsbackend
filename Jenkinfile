@@ -82,7 +82,7 @@ pipeline {
 		}
 
  
-	stage('upload jar file to nexus'){
+	/*stage('upload jar file to nexus'){
 		steps{
 			script{
 
@@ -108,8 +108,12 @@ pipeline {
 		}
 
 
-	}
-
+	}*/
+  stage('Deploy to Nexus') {
+            steps {
+                sh 'mvn deploy'
+            }
+        }
           // stage("sonar_quality_check"){
           //  steps{
             //    script{
