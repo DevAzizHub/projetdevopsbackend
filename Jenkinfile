@@ -56,40 +56,21 @@ pipeline {
 
                       }
                   }
-<<<<<<< HEAD
        
-           stage("sonar_quality_check"){
-=======
-       }
+          
         stage("sonar_quality_check"){
->>>>>>> 13f1f21a0f5207a5d6d08c84088e50e808ade3b4
             steps{
                 script{
                  waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
                }
               }
-<<<<<<< HEAD
+
 		}
-=======
-}
+
+
           // stage("sonar_quality_check"){
           //  steps{
-            //    script{
->>>>>>> 13f1f21a0f5207a5d6d08c84088e50e808ade3b4
-               //     withSonarQubeEnv(credentialsId: 'adafa76b-6205-41ed-9149-55f48920347e') {
-                 //     sh "mvn sonar:sonar"
-                   // }
-
-                //     timeout(time: 1, unit: 'HOURS') {
-                  //    def qg = waitForQualityGate()
-                    //  if (qg.status != 'OK') {
-                      //     error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                    //  }
-                  //  }
-              //  }
-           // }
-          
-        //}    
+              
             
          stage("Publish to Nexus Repository Manager") {
             steps {
