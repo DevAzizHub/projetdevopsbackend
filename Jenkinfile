@@ -166,7 +166,6 @@ stage('Docker image build'){
            // }
           
         //}    
->>>>>>> c99fb42f3b5f40812802a6e6a6723bbb92a9b815
             
  //        stage("Publish to Nexus Repository Manager") {
 //            steps {
