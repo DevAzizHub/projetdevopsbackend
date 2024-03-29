@@ -8,6 +8,7 @@ pipeline {
         NEXUS_REPOSITORY = "jenkins-repo"
         NEXUS_CREDENTIAL_ID = "deploymentRepo"
        // DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+	DOCKER_USERNAME = "Medaziz2024+"
     }
    
     stages {
@@ -126,7 +127,7 @@ stage('Docker image build'){
                 script {
                     
                     withCredentials([string(credentialsId: 'DockerId', variable: 'Docker')]) {
-                        sh "docker login -u 'dockerfilehunter' -p ${Docker}"
+                        sh "docker login -u DOCKER_USERNAME -p ${Docker}"
                         sh 'docker image push dockerfilehunter/spring:$BUILD_NUMBER'
                 }
             } 
