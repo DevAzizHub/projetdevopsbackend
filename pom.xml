@@ -69,6 +69,13 @@
 	   <scope>test</scope>
 	</dependency>
     </dependencies>
+
+	 <distributionManagement>
+        <repository>
+            <name>demo</name>
+            <url>http://10.0.2.15:8081/#admin/repository/repositories:demo</url>
+        </repository>
+    </distributionManagement>
     <build>
         <plugins>
             <plugin>
