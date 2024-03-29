@@ -8,6 +8,7 @@ pipeline {
         NEXUS_REPOSITORY = "jenkins-repo"
         NEXUS_CREDENTIAL_ID = "deploymentRepo"
        // DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+	DOCKER_USERNAME = "Medaziz2024+"
     }
    
     stages {
@@ -17,6 +18,21 @@ pipeline {
                 git 'https://github.com/DevAzizHub/projetdevopsbackend.git'
             }
         }
+
+ stage('Increment Version'){
+             steps{
+                 script{
+                    echo 'Incrementing Artifact Version ...'
+                    sh 'mvn build-helper:parse-version versions:set \
+                        -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.minorVersion}.\\\${parsedVersion.nextIncrementalVersion} \
+                        versions:commit'
+                    def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+                    def version = matcher[1][1]
+                    echo '$version'
+                    env.VERSION = "$version"
+                 }
+             }
+         }
 
         stage('Compilation avec Maven') {
             steps {
@@ -55,58 +71,138 @@ pipeline {
                           }
 
                       }
+
                   }
-       
-          
+}       
+         
         stage("sonar_quality_check"){
             steps{
                 script{
                  waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
                }
+	
               }
 
-		}
-
+}
 
           // stage("sonar_quality_check"){
           //  steps{
               
-            
-         stage("Publish to Nexus Repository Manager") {
-            steps {
+
+
+
+ 
+	stage('upload jar file to nexus'){
+		steps{
+			script{
+
+		nexusArtifactUploader artifacts: 
+		[
+		[
+			artifactId: 'projet',
+			classifier: '',
+			file: 'target/Uber.jar',
+			type: 'jar']
+			],
+			credentialsId: 
+			'nexusauth', 
+			groupId: 'org.example',
+			nexusUrl: '10.0.2.15:8081',
+			nexusVersion: 'nexus3',
+			protocol: 'http',
+			repository: 'demo',
+			version: '$version'
+
+			}
+
+		}
+
+
+	}
+stage('Docker image build'){ 
+	steps {
+		script {
+			sh 'docker image build -t  image1:$BUILD_NUMBER .'
+              
+		}
+
+	}
+
+
+}
+
+       stage("Push to DockerHub") { 
+            steps { 
                 script {
-                    pom = readMavenPom file: "pom.xml";
-                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
-                    echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
-                    artifactPath = filesByGlob[0].path;
-                    artifactExists = fileExists artifactPath;
-                    if(artifactExists) {
-                        echo "* File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
-                        nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
-                            artifacts: [
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: artifactPath,
-                                type: pom.packaging],
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
-                                type: "pom"]
-                            ]
-                        );
-                    } else {
-                        error "* File: ${artifactPath}, could not be found";
-                    }
+                    
+                    withCredentials([string(credentialsId: 'DockerId', variable: 'Docker')]) {
+                        sh "sudo docker login -u DOCKER_USERNAME -p Medaziz2024+"
+                        sh 'sudo docker image push dockerfilehunter/spring:$BUILD_NUMBER'
                 }
+            } 
             }
+            
         }
+
+/*  stage('Deploy to Nexus') {
+            steps {
+                sh 'mvn deploy'
+            }
+        }*/
+          // stage("sonar_quality_check"){
+          //  steps{
+            //    script{
+               //     withSonarQubeEnv(credentialsId: 'adafa76b-6205-41ed-9149-55f48920347e') {
+                 //     sh "mvn sonar:sonar"
+                   // }
+
+                //     timeout(time: 1, unit: 'HOURS') {
+                  //    def qg = waitForQualityGate()
+                    //  if (qg.status != 'OK') {
+                      //     error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                    //  }
+                  //  }
+              //  }
+           // }
+          
+        //}    
+>>>>>>> c99fb42f3b5f40812802a6e6a6723bbb92a9b815
+            
+ //        stage("Publish to Nexus Repository Manager") {
+//            steps {
+  //              script {
+     //               pom = readMavenPom file: "pom.xml";
+   //                 filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
+     //               echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
+    //                artifactPath = filesByGlob[0].path;
+    //                artifactExists = fileExists artifactPath;
+    //                if(artifactExists) {
+    //                    echo "* File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
+     //                   nexusArtifactUploader(
+     //                       nexusVersion: NEXUS_VERSION,
+      //                      protocol: NEXUS_PROTOCOL,
+      //                      nexusUrl: NEXUS_URL,
+      //                      groupId: pom.groupId,
+        //                    version: pom.version,
+        //                    repository: NEXUS_REPOSITORY,
+        //                    credentialsId: NEXUS_CREDENTIAL_ID,
+         //                   artifacts: [
+         //                       [artifactId: pom.artifactId,
+           //                     classifier: '',
+          //                      file: artifactPath,
+           //                     type: pom.packaging],
+            //                    [artifactId: pom.artifactId,
+            //                    classifier: '',
+            //                    file: "pom.xml",
+            //                    type: "pom"]
+             //               ]
+             //           );
+             //       } else {
+             //           error "* File: ${artifactPath}, could not be found";
+             //       }
+             //   }
+           // }
+     //   }
 
         stage('Affichage de la date système') {
             steps {
