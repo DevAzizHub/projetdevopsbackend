@@ -57,7 +57,8 @@ stage('Increment Version'){
         
       stage('MVN install') {
             steps {
-              sh 'mvn package install'
+              sh 'mvn package'
+		sh 'mvn install'
             }
         }
         stage('SonarQube Analysis') {
