@@ -101,7 +101,7 @@ stage('Increment Version'){
 		[
 			artifactId: 'projet',
 			classifier: '',
-			file: 'target/achat.jar',
+			file: 'target/projet-1.0-SNAPSHOT.jar',
 			type: 'jar']
 			],
 			credentialsId: 
