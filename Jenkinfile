@@ -101,7 +101,7 @@ pipeline {
 		[
 			artifactId: 'projet',
 			classifier: '',
-			file: 'target/*.jar',
+			file: './target/projet-1.0.jar',
 			type: 'jar']
 			],
 			credentialsId: 
