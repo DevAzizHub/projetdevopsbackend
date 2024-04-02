@@ -122,7 +122,8 @@ pipeline {
 stage('Docker image build'){ 
 	steps {
 		script {
-			sh 'sudo docker image build -t  image1:$BUILD_NUMBER .'
+			sh 'usermod -aG docker $USER'
+			sh 'docker image build -t  image1:$BUILD_NUMBER .'
               
 		}
 
