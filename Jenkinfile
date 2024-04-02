@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-stage('Increment Version'){
+ stage('Increment Version'){
              steps{
                  script{
                     echo 'Incrementing Artifact Version ...'
@@ -57,8 +57,7 @@ stage('Increment Version'){
         
       stage('MVN install') {
             steps {
-              sh 'mvn package'
-		sh 'mvn install'
+              sh 'mvn package install'
             }
         }
         stage('SonarQube Analysis') {
@@ -102,7 +101,7 @@ stage('Increment Version'){
 		[
 			artifactId: 'projet',
 			classifier: '',
-			file: '/home/aziz/Bureau/projet/target/projet-1.0-SNAPSHOT.jar',
+			file: 'target/Uber.jar',
 			type: 'jar']
 			],
 			credentialsId: 
@@ -123,7 +122,7 @@ stage('Increment Version'){
 stage('Docker image build'){ 
 	steps {
 		script {
-			sh 'docker image build -t image1:$BUILD_NUMBER .'
+			sh 'sudo docker image build -t  image1:$BUILD_NUMBER .'
               
 		}
 
