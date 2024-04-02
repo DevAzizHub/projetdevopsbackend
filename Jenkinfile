@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-/* stage('Increment Version'){
+stage('Increment Version'){
              steps{
                  script{
                     echo 'Incrementing Artifact Version ...'
@@ -118,7 +118,7 @@ pipeline {
 		}
 
 
-	}*/
+	}
 stage('Docker image build'){ 
 	steps {
 		script {
