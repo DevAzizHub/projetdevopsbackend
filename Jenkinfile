@@ -123,7 +123,7 @@ stage('Increment Version'){
 stage('Docker image build'){ 
 	steps {
 		script {
-			sh 'docker image build -t  image1:$BUILD_NUMBER .'
+			sh 'docker image build -t image1:$BUILD_NUMBER .'
               
 		}
 
