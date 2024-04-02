@@ -9,6 +9,9 @@ pipeline {
         NEXUS_CREDENTIAL_ID = "deploymentRepo"
        // DOCKERHUB_CREDENTIALS = credentials('dockerhub')
 	DOCKER_USERNAME = "Medaziz2024+"
+   	DOCKER_REGISTRY = ''
+        DOCKER_IMAGE_NAME = 'achatproject'
+        DOCKER_IMAGE_TAG = 'latest'
     }
    
     stages {
@@ -128,6 +131,8 @@ stage('Docker image build'){
 	steps {
 		script {
 			sh 'sudo docker image build -t  image1:$BUILD_NUMBER .'
+			//sh "sudo docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
+
               
 		}
 
