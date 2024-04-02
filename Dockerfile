@@ -1,10 +1,4 @@
-FROM maven as build
-WORKDIR /app
-COPY . . 
-RUN mvn install
-
-FROM openjdk:11.0
-WORKDIR /app
-ADD target/*.jar app.jar
-EXPOSE 9090
-CMD [ "java",".jar","/app/app.jar"]
+FROM openjdk:17
+ADD target/achat-1.0.jar achat.jar
+EXPOSE 8089
+ENTRYPOINT ["java", "-jar", "achat.jar"]
