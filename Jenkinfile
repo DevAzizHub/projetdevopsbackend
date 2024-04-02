@@ -101,7 +101,7 @@ stage('Increment Version'){
 		[
 			artifactId: 'projet',
 			classifier: '',
-			file: 'target/projet-1.0-SNAPSHOT.jar',
+			file: '/home/aziz/Bureau/projet/target/projet-1.0-SNAPSHOT.jar',
 			type: 'jar']
 			],
 			credentialsId: 
