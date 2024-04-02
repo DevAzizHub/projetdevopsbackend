@@ -1,6 +1,10 @@
-FROM openjdk:17
-ADD target/projet-1.0-SNAPSHOT.jar /app/projet-1.0-SNAPSHOT.jar
+FROM maven as build
 WORKDIR /app
-EXPOSE 9090
-CMD ["java","-jar", "projet-1.0-SNAPSHOT.jar"]
+COPY . . 
+RUN mvn install
 
+FROM openjdk:11.0
+WORKDIR /app
+ADD target/*.jar app.jar
+EXPOSE 9090
+CMD [ "java",".jar","/app/app.jar"]
