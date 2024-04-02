@@ -92,7 +92,7 @@ pipeline {
 
 
  
-	stage('upload jar file to nexus'){
+	/*stage('upload jar file to nexus'){
 		steps{
 			script{
 
@@ -118,7 +118,12 @@ pipeline {
 		}
 
 
-	}
+	}*/
+ stage('Nexus'){
+            steps{
+                sh 'mvn deploy -DskipTests'
+            }
+        }
 stage('Docker image build'){ 
 	steps {
 		script {
