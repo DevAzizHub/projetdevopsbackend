@@ -144,7 +144,7 @@ stage('Docker image build'){
    stage("Push to DockerHub") { 
     steps { 
         script {
-=                sh 'sudo docker image push $DOCKER_USERNAME:$BUILD_NUMBER'
+=                sh 'sudo docker image push dockerfilehunter:$BUILD_NUMBER'
             
         }
     } 
