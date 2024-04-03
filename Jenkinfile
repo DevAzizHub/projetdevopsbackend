@@ -144,7 +144,7 @@ stage('Docker image build'){
      stage("Push to DockerHub") { 
     steps { 
         script {
-              sh 'docker image push dockerfilehunter/project:latest'
+              sh 'docker image push achatproject:latest'
             
         }
     } 
