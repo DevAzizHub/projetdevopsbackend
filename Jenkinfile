@@ -144,9 +144,8 @@ stage('Docker image build'){
    stage("Push to DockerHub") { 
     steps { 
         script {
-            withCredentials([usernamePassword(credentialsId: 'dockerhubpwd', passwordVariable: 'DOCKER_PASSWORD')]) {
-                sh 'sudo docker image push $DOCKER_USERNAME:$BUILD_NUMBER'
-            }
+=                sh 'sudo docker image push ${DOCKER_USERNAME}:$BUILD_NUMBER'
+            
         }
     } 
 }
