@@ -130,7 +130,7 @@ pipeline {
 stage('Docker image build'){ 
 	steps {
 		script {
-			sh 'docker image build -t  ${DOCKER_IMAGE_NAME}:$BUILD_NUMBER .'
+			sh 'docker image build -t   dockerfilehunter/achatproject:$BUILD_NUMBER .'
 			//sh "sudo docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
 
               
@@ -144,7 +144,7 @@ stage('Docker image build'){
      stage("Push to DockerHub") { 
     steps { 
         script {
-              sh 'docker image push achatproject:$BUILD_NUMBER'
+              sh 'docker image push dockerfilehunter/achatproject:$BUILD_NUMBER'
             
         }
     } 
