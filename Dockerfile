@@ -1,7 +1,11 @@
-FROM openjdk:17
-RUN mvn package
+FROM maven as build
 WORKDIR /app
-COPY /target/projet-1.1.jar achat.jar  
-EXPOSE 8089
-RUN chmod 777 achat.jar 
-CMD ["java","-jar","achat.jar"]
+COPY . . 
+RUN mvn package
+
+FROM openjdk:17
+WORKDIR /app
+ADD target/*.jar app.jar
+RUN chmod 777 app.jar
+EXPOSE 9090
+CMD [ "java",".jar","/app/app.jar"]
