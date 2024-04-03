@@ -144,6 +144,7 @@ stage('Docker image build'){
      stage("Push to DockerHub") { 
     steps { 
         script {
+		sh 'docker login -u "dockerfilehunter" -p "Medaziz2024+"' 
               sh 'docker image push dockerfilehunter/achatproject'
             
         }
