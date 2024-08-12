@@ -50,13 +50,7 @@ pipeline {
             }
         }
 
-           stage('Rapport JaCoCo') {
-            steps {
-                sh 'mvn test'
-               sh 'mvn jacoco:report'
-               jacoco()
-            }
-        }
+
         
       stage('MVN install') {
             steps {
@@ -77,24 +71,6 @@ pipeline {
 
                   }
 }       
-         
-    /*    stage("sonar_quality_check"){
-            steps{
-                script{
-                 waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
-               }
-	
-              }
-
-}*/
-
-          // stage("sonar_quality_check"){
-          //  steps{
-              
-
-
-
- 
  stage('Nexus'){
             steps{
                 sh 'mvn deploy -DskipTests'
