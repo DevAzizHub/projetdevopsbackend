@@ -44,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('JUnit / Mockito') {
+        stage('JUnit') {
             steps {
               sh 'mvn test'
             }
