@@ -1,18 +1,6 @@
 pipeline {
     agent any
- environment {
-        PATH = "$PATH:/opt/maven/bin"
-        NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "10.0.2.15:8081"
-        NEXUS_REPOSITORY = "jenkins-repo"
-        NEXUS_CREDENTIAL_ID = "deploymentRepo"
-       // DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-	DOCKER_USERNAME = "dockerfilehunter"
-   	DOCKER_REGISTRY = ''
-        DOCKER_IMAGE_NAME = 'achatproject'
-        DOCKER_IMAGE_TAG = 'latest'
-    }
+
    
     stages {
         stage('Checkout') {
